@@ -177,7 +177,8 @@ export default function Landing() {
 
       {/* HERO */}
       <section id="home" className="relative pt-32 pb-24 lg:pt-44 lg:pb-32 overflow-hidden">
-        <div className="absolute inset-0 grid-bg opacity-40 [mask-image:radial-gradient(ellipse_at_center,black,transparent_70%)]" />
+        <div className="absolute inset-0 hero-spotlight" />
+        <div className="absolute inset-0 grid-bg opacity-30 [mask-image:radial-gradient(ellipse_at_center,black,transparent_70%)]" />
         <div className="relative mx-auto max-w-7xl px-6 lg:px-10 grid lg:grid-cols-2 gap-16 items-center">
           <div className="reveal">
             <span className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-xs font-medium text-primary">
@@ -193,7 +194,7 @@ export default function Landing() {
               with custom design, speed optimization, and conversion-focused strategy.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
-              <a href="#projects" className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 font-semibold text-primary-foreground hover:opacity-90 transition">
+              <a href="#projects" className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 font-semibold text-primary-foreground hover:opacity-90 transition glow-ring">
                 View My Work <ArrowRight className="w-4 h-4" />
               </a>
               <a href="#contact" className="inline-flex items-center gap-2 rounded-full border border-border bg-surface/50 px-7 py-3.5 font-semibold text-foreground hover:border-primary/50 hover:bg-surface transition">
@@ -212,10 +213,13 @@ export default function Landing() {
             <div className="absolute bottom-0 -right-4 w-20 h-20 rounded-full bg-primary/10 border border-primary/30 animate-float" style={{ animationDelay: "1.5s" }} />
 
             <div className="relative">
-              <div className="w-72 h-72 sm:w-96 sm:h-96 rounded-full border-2 border-primary/60 p-3 animate-pulse-ring">
-                <div className="w-full h-full rounded-full bg-gradient-to-br from-surface to-surface-elevated border border-border flex items-center justify-center text-center text-muted-foreground text-sm px-8">
-                  [ YOUR PHOTO HERE ]
-                </div>
+              <div className="absolute -inset-6 rounded-full bg-gradient-to-tr from-primary/30 via-transparent to-primary/20 blur-2xl" />
+              <div className="relative w-72 h-72 sm:w-96 sm:h-96 rounded-full border-2 border-primary/60 p-2 animate-pulse-ring overflow-hidden">
+                <img
+                  src={portrait}
+                  alt="Olumide — Certified Shopify Partner"
+                  className="w-full h-full rounded-full object-cover object-top"
+                />
               </div>
               <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 glass rounded-full border border-primary/40 px-5 py-2 text-sm font-semibold whitespace-nowrap">
                 <span className="text-primary">●</span> Shopify Expert
