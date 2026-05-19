@@ -277,6 +277,42 @@ export default function Landing() {
             ))}
           </div>
 
+          {/* Live proof marquee — auto-scrolling sales screenshots */}
+          <div className="reveal mt-20">
+            <div className="flex items-center justify-between mb-6">
+              <h3 className="font-display text-2xl md:text-3xl font-bold">Live Sales Screenshots</h3>
+              <span className="hidden sm:inline-flex items-center gap-2 text-xs text-muted-foreground">
+                <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+                Real client results
+              </span>
+            </div>
+            <div className="marquee-mask overflow-hidden">
+              <div className="flex gap-6 animate-marquee w-max">
+                {[...proofImages, ...proofImages].map((p, i) => (
+                  <figure
+                    key={i}
+                    className="group relative w-[260px] sm:w-[300px] flex-shrink-0 rounded-2xl border border-border bg-background/60 overflow-hidden hover:border-primary/60 transition"
+                  >
+                    <div className="aspect-[3/4] overflow-hidden bg-white">
+                      <img
+                        src={p.src}
+                        alt={p.label}
+                        className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                        loading="lazy"
+                      />
+                    </div>
+                    <figcaption className="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-background via-background/90 to-transparent">
+                      <div className="flex items-center gap-2 text-sm font-semibold text-primary">
+                        <TrendingUp className="w-4 h-4" /> {p.label}
+                      </div>
+                    </figcaption>
+                  </figure>
+                ))}
+              </div>
+            </div>
+          </div>
+
+
           <div className="mt-20 grid md:grid-cols-3 gap-6">
             {testimonials.map((t) => (
               <div key={t.name} className="reveal rounded-2xl border border-border bg-background/40 p-7">
