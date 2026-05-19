@@ -3,6 +3,18 @@ import {
   ShoppingBag, Zap, RefreshCw, Palette, TrendingUp, Wrench,
   Star, Check, ArrowRight, Menu, X, Linkedin, Twitter, MessageCircle,
 } from "lucide-react";
+import portrait from "@/assets/olumide-portrait.png";
+import proof1 from "@/assets/proof-1.png";
+import proof2 from "@/assets/proof-2.png";
+import proof3 from "@/assets/proof-3.png";
+import proof4 from "@/assets/proof-4.jpg";
+
+const proofImages = [
+  { src: proof1, label: "$3,600 Day · 2,702 Sessions" },
+  { src: proof4, label: "$41,088 in a Single Day" },
+  { src: proof2, label: "PKR 261M Total Sales" },
+  { src: proof3, label: "Live Order Notifications" },
+];
 
 // Scroll reveal hook
 function useReveal() {
