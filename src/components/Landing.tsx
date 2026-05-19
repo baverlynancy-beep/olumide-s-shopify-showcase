@@ -3,6 +3,18 @@ import {
   ShoppingBag, Zap, RefreshCw, Palette, TrendingUp, Wrench,
   Star, Check, ArrowRight, Menu, X, Linkedin, Twitter, MessageCircle,
 } from "lucide-react";
+import portrait from "@/assets/olumide-portrait.png";
+import proof1 from "@/assets/proof-1.png";
+import proof2 from "@/assets/proof-2.png";
+import proof3 from "@/assets/proof-3.png";
+import proof4 from "@/assets/proof-4.jpg";
+
+const proofImages = [
+  { src: proof1, label: "$3,600 Day · 2,702 Sessions" },
+  { src: proof4, label: "$41,088 in a Single Day" },
+  { src: proof2, label: "PKR 261M Total Sales" },
+  { src: proof3, label: "Live Order Notifications" },
+];
 
 // Scroll reveal hook
 function useReveal() {
@@ -165,7 +177,8 @@ export default function Landing() {
 
       {/* HERO */}
       <section id="home" className="relative pt-32 pb-24 lg:pt-44 lg:pb-32 overflow-hidden">
-        <div className="absolute inset-0 grid-bg opacity-40 [mask-image:radial-gradient(ellipse_at_center,black,transparent_70%)]" />
+        <div className="absolute inset-0 hero-spotlight" />
+        <div className="absolute inset-0 grid-bg opacity-30 [mask-image:radial-gradient(ellipse_at_center,black,transparent_70%)]" />
         <div className="relative mx-auto max-w-7xl px-6 lg:px-10 grid lg:grid-cols-2 gap-16 items-center">
           <div className="reveal">
             <span className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-xs font-medium text-primary">
@@ -181,7 +194,7 @@ export default function Landing() {
               with custom design, speed optimization, and conversion-focused strategy.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
-              <a href="#projects" className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 font-semibold text-primary-foreground hover:opacity-90 transition">
+              <a href="#projects" className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 font-semibold text-primary-foreground hover:opacity-90 transition glow-ring">
                 View My Work <ArrowRight className="w-4 h-4" />
               </a>
               <a href="#contact" className="inline-flex items-center gap-2 rounded-full border border-border bg-surface/50 px-7 py-3.5 font-semibold text-foreground hover:border-primary/50 hover:bg-surface transition">
@@ -200,10 +213,13 @@ export default function Landing() {
             <div className="absolute bottom-0 -right-4 w-20 h-20 rounded-full bg-primary/10 border border-primary/30 animate-float" style={{ animationDelay: "1.5s" }} />
 
             <div className="relative">
-              <div className="w-72 h-72 sm:w-96 sm:h-96 rounded-full border-2 border-primary/60 p-3 animate-pulse-ring">
-                <div className="w-full h-full rounded-full bg-gradient-to-br from-surface to-surface-elevated border border-border flex items-center justify-center text-center text-muted-foreground text-sm px-8">
-                  [ YOUR PHOTO HERE ]
-                </div>
+              <div className="absolute -inset-6 rounded-full bg-gradient-to-tr from-primary/30 via-transparent to-primary/20 blur-2xl" />
+              <div className="relative w-72 h-72 sm:w-96 sm:h-96 rounded-full border-2 border-primary/60 p-2 animate-pulse-ring overflow-hidden">
+                <img
+                  src={portrait}
+                  alt="Olumide — Certified Shopify Partner"
+                  className="w-full h-full rounded-full object-cover object-top"
+                />
               </div>
               <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 glass rounded-full border border-primary/40 px-5 py-2 text-sm font-semibold whitespace-nowrap">
                 <span className="text-primary">●</span> Shopify Expert
@@ -260,6 +276,42 @@ export default function Landing() {
               </div>
             ))}
           </div>
+
+          {/* Live proof marquee — auto-scrolling sales screenshots */}
+          <div className="reveal mt-20">
+            <div className="flex items-center justify-between mb-6">
+              <h3 className="font-display text-2xl md:text-3xl font-bold">Live Sales Screenshots</h3>
+              <span className="hidden sm:inline-flex items-center gap-2 text-xs text-muted-foreground">
+                <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+                Real client results
+              </span>
+            </div>
+            <div className="marquee-mask overflow-hidden">
+              <div className="flex gap-6 animate-marquee w-max">
+                {[...proofImages, ...proofImages].map((p, i) => (
+                  <figure
+                    key={i}
+                    className="group relative w-[260px] sm:w-[300px] flex-shrink-0 rounded-2xl border border-border bg-background/60 overflow-hidden hover:border-primary/60 transition"
+                  >
+                    <div className="aspect-[3/4] overflow-hidden bg-white">
+                      <img
+                        src={p.src}
+                        alt={p.label}
+                        className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                        loading="lazy"
+                      />
+                    </div>
+                    <figcaption className="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-background via-background/90 to-transparent">
+                      <div className="flex items-center gap-2 text-sm font-semibold text-primary">
+                        <TrendingUp className="w-4 h-4" /> {p.label}
+                      </div>
+                    </figcaption>
+                  </figure>
+                ))}
+              </div>
+            </div>
+          </div>
+
 
           <div className="mt-20 grid md:grid-cols-3 gap-6">
             {testimonials.map((t) => (

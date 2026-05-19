@@ -124,4 +124,19 @@
     50% { box-shadow: 0 0 0 20px oklch(0.78 0.18 135 / 0), var(--shadow-glow); }
   }
   .animate-pulse-ring { animation: pulse-ring 3s ease-out infinite; }
+  @keyframes marquee-x {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  .animate-marquee { animation: marquee-x 40s linear infinite; }
+  .marquee-mask {
+    mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
+    -webkit-mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
+  }
+  .hero-spotlight {
+    background:
+      radial-gradient(ellipse 60% 50% at 75% 35%, oklch(0.78 0.18 135 / 0.18), transparent 70%),
+      radial-gradient(ellipse 50% 40% at 20% 80%, oklch(0.78 0.18 135 / 0.10), transparent 70%),
+      radial-gradient(ellipse 80% 60% at 50% 0%, oklch(0.30 0.02 240 / 0.6), transparent 70%);
+  }
 }
