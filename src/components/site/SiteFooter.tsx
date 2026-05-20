@@ -34,8 +34,16 @@ export default function SiteFooter() {
         </div>
         <div>
           <div className="font-semibold mb-3 text-sm">Connect</div>
+          <a
+            href="https://wa.me/2348149487760?text=Hi%20Olumide%2C%20I%27d%20like%20to%20discuss%20a%20Shopify%20project."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-4 py-2 text-sm font-semibold text-primary hover:bg-primary/15 transition mb-4"
+          >
+            <MessageCircle className="w-4 h-4" /> +234 814 948 7760
+          </a>
           <div className="flex gap-3">
-            {[Linkedin, Twitter, MessageCircle].map((Icon, i) => (
+            {[Linkedin, Twitter].map((Icon, i) => (
               <a key={i} href="#" className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:border-primary hover:text-primary transition">
                 <Icon className="w-4 h-4" />
               </a>
