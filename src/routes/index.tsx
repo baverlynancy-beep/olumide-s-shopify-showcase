@@ -28,8 +28,8 @@ function HomePage() {
       {/* HERO — editorial split */}
       <section className="relative pt-28 pb-20 lg:pt-36 lg:pb-28 overflow-hidden">
         <div className="absolute inset-0 -z-10">
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_75%_20%,oklch(0.78_0.18_135/0.12),transparent_70%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_50%_40%_at_15%_85%,oklch(0.78_0.18_135/0.06),transparent_70%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_75%_20%,oklch(0.78_0.13_85/0.14),transparent_70%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_50%_40%_at_15%_85%,oklch(0.88_0.11_88/0.06),transparent_70%)]" />
           <div className="absolute inset-0 grid-bg opacity-[0.07] [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)]" />
         </div>
 
