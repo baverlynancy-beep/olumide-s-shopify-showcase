@@ -9,8 +9,32 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SalesProofRouteImport } from './routes/sales-proof'
+import { Route as ProjectsRouteImport } from './routes/projects'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as CatalogRouteImport } from './routes/catalog'
 import { Route as IndexRouteImport } from './routes/index'
 
+const SalesProofRoute = SalesProofRouteImport.update({
+  id: '/sales-proof',
+  path: '/sales-proof',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProjectsRoute = ProjectsRouteImport.update({
+  id: '/projects',
+  path: '/projects',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CatalogRoute = CatalogRouteImport.update({
+  id: '/catalog',
+  path: '/catalog',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +43,72 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/catalog': typeof CatalogRoute
+  '/contact': typeof ContactRoute
+  '/projects': typeof ProjectsRoute
+  '/sales-proof': typeof SalesProofRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/catalog': typeof CatalogRoute
+  '/contact': typeof ContactRoute
+  '/projects': typeof ProjectsRoute
+  '/sales-proof': typeof SalesProofRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/catalog': typeof CatalogRoute
+  '/contact': typeof ContactRoute
+  '/projects': typeof ProjectsRoute
+  '/sales-proof': typeof SalesProofRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/catalog' | '/contact' | '/projects' | '/sales-proof'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/catalog' | '/contact' | '/projects' | '/sales-proof'
+  id: '__root__' | '/' | '/catalog' | '/contact' | '/projects' | '/sales-proof'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CatalogRoute: typeof CatalogRoute
+  ContactRoute: typeof ContactRoute
+  ProjectsRoute: typeof ProjectsRoute
+  SalesProofRoute: typeof SalesProofRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/sales-proof': {
+      id: '/sales-proof'
+      path: '/sales-proof'
+      fullPath: '/sales-proof'
+      preLoaderRoute: typeof SalesProofRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/projects': {
+      id: '/projects'
+      path: '/projects'
+      fullPath: '/projects'
+      preLoaderRoute: typeof ProjectsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/catalog': {
+      id: '/catalog'
+      path: '/catalog'
+      fullPath: '/catalog'
+      preLoaderRoute: typeof CatalogRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,6 +121,10 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CatalogRoute: CatalogRoute,
+  ContactRoute: ContactRoute,
+  ProjectsRoute: ProjectsRoute,
+  SalesProofRoute: SalesProofRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
