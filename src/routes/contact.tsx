@@ -84,7 +84,7 @@ function ContactPage() {
           {/* SIDE */}
           <div className="lg:col-span-2 space-y-5">
             <ContactCard icon={Mail} label="Email" value="hello@olumide.digital" href="mailto:hello@olumide.digital" />
-            <ContactCard icon={MessageCircle} label="WhatsApp" value="+234 800 000 0000" href="#" />
+            <ContactCard icon={MessageCircle} label="WhatsApp" value="+234 814 948 7760" href="https://wa.me/2348149487760?text=Hi%20Olumide%2C%20I%27d%20like%20to%20discuss%20a%20Shopify%20project." />
             <ContactCard icon={Calendar} label="Book a slot" value="calendly.com/olumide" href="#" />
 
             <div className="reveal rounded-2xl border border-primary/30 bg-primary/5 p-6">
