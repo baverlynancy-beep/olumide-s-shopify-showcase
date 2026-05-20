@@ -121,8 +121,8 @@
   }
   .animate-float { animation: float-slow 8s ease-in-out infinite; }
   @keyframes pulse-ring {
-    0%, 100% { box-shadow: 0 0 0 0 oklch(0.78 0.18 135 / 0.4), var(--shadow-glow); }
-    50% { box-shadow: 0 0 0 20px oklch(0.78 0.18 135 / 0), var(--shadow-glow); }
+    0%, 100% { box-shadow: 0 0 0 0 oklch(0.78 0.13 85 / 0.4), var(--shadow-glow); }
+    50% { box-shadow: 0 0 0 20px oklch(0.78 0.13 85 / 0), var(--shadow-glow); }
   }
   .animate-pulse-ring { animation: pulse-ring 3s ease-out infinite; }
   @keyframes marquee-x {
@@ -136,8 +136,12 @@
   }
   .hero-spotlight {
     background:
-      radial-gradient(ellipse 60% 50% at 75% 35%, oklch(0.78 0.18 135 / 0.18), transparent 70%),
-      radial-gradient(ellipse 50% 40% at 20% 80%, oklch(0.78 0.18 135 / 0.10), transparent 70%),
-      radial-gradient(ellipse 80% 60% at 50% 0%, oklch(0.30 0.02 240 / 0.6), transparent 70%);
+      radial-gradient(ellipse 60% 50% at 75% 35%, oklch(0.78 0.13 85 / 0.18), transparent 70%),
+      radial-gradient(ellipse 50% 40% at 20% 80%, oklch(0.88 0.11 88 / 0.08), transparent 70%),
+      radial-gradient(ellipse 80% 60% at 50% 0%, oklch(0.22 0.005 60 / 0.6), transparent 70%);
+  }
+  .gold-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, oklch(0.78 0.13 85 / 0.5), transparent);
   }
 }
