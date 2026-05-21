@@ -3,6 +3,7 @@ import { ArrowRight, Check, Star, TrendingUp } from "lucide-react";
 import portrait from "@/assets/olumide-portrait.png";
 import proof4 from "@/assets/proof-4.jpg";
 import { useReveal, Counter } from "@/components/site/Reveal";
+import { BrandLogos } from "@/components/site/BrandLogos";
 import { services, stats, testimonials } from "@/lib/site-data";
 
 export const Route = createFileRoute("/")({
@@ -142,9 +143,7 @@ function HomePage() {
                 className="reveal group rounded-2xl border border-border bg-surface/40 p-7 transition-all hover:border-primary/60 hover:bg-surface hover:-translate-y-1"
                 style={{ transitionDelay: `${i * 50}ms` }}
               >
-                <div className="w-11 h-11 rounded-xl bg-primary/15 border border-primary/30 flex items-center justify-center text-primary">
-                  <s.icon className="w-5 h-5" />
-                </div>
+                <BrandLogos brands={s.brands} />
                 <h3 className="mt-5 text-lg font-semibold">{s.title}</h3>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
               </div>
