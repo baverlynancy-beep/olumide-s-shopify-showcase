@@ -35,13 +35,16 @@ function ProjectsPage() {
               }`}
               style={{ transitionDelay: `${i * 80}ms` }}
             >
-              <div className={`relative overflow-hidden ${i === 0 ? "aspect-[21/9]" : "aspect-[16/10]"}`}>
-                <div className="absolute inset-0 bg-gradient-to-br from-surface-elevated via-surface to-background flex items-center justify-center text-muted-foreground text-sm tracking-widest uppercase transition-transform duration-700 group-hover:scale-[1.03]">
-                  {p.name} — Preview
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
+              <div className={`relative overflow-hidden bg-white ${i === 0 ? "aspect-[21/9]" : "aspect-[4/3]"}`}>
+                <img
+                  src={p.image}
+                  alt={`${p.name} — ${p.niche} Shopify store`}
+                  loading="lazy"
+                  className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/85 via-background/10 to-transparent pointer-events-none" />
                 <div className="absolute top-5 left-5">
-                  <span className="text-[10px] px-3 py-1 rounded-full border border-primary/30 bg-primary/15 text-primary uppercase tracking-widest font-semibold">
+                  <span className="text-[10px] px-3 py-1 rounded-full border border-primary/30 bg-primary/15 text-primary uppercase tracking-widest font-semibold backdrop-blur">
                     {p.niche}
                   </span>
                 </div>
