@@ -1,5 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Check, Linkedin, Twitter, MessageCircle } from "lucide-react";
+import logo from "@/assets/logo.png";
+import { WHATSAPP_DISPLAY, WHATSAPP_URL } from "@/lib/site-data";
 
 const navLinks = [
   { to: "/", label: "Home" },
@@ -14,10 +16,8 @@ export default function SiteFooter() {
     <footer className="border-t border-border bg-surface/40">
       <div className="mx-auto max-w-7xl px-6 lg:px-10 py-16 grid md:grid-cols-3 gap-10">
         <div>
-          <div className="font-display font-bold text-xl">
-            Olumide<span className="text-primary">.</span> Digital Solution
-          </div>
-          <p className="mt-3 text-sm text-muted-foreground max-w-xs">
+          <img src={logo} alt="DS Shopify Agency" className="h-16 w-auto" />
+          <p className="mt-4 text-sm text-muted-foreground max-w-xs">
             Your Shopify Growth Partner — building stores that perform.
           </p>
           <div className="mt-5 inline-flex items-center gap-2 rounded-lg border border-primary/30 bg-primary/10 px-3 py-2 text-xs text-primary font-semibold">
@@ -35,12 +35,12 @@ export default function SiteFooter() {
         <div>
           <div className="font-semibold mb-3 text-sm">Connect</div>
           <a
-            href="https://wa.me/2348149487760?text=Hi%20Olumide%2C%20I%27d%20like%20to%20discuss%20a%20Shopify%20project."
+            href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-4 py-2 text-sm font-semibold text-primary hover:bg-primary/15 transition mb-4"
           >
-            <MessageCircle className="w-4 h-4" /> +234 814 948 7760
+            <MessageCircle className="w-4 h-4" /> {WHATSAPP_DISPLAY}
           </a>
           <div className="flex gap-3">
             {[Linkedin, Twitter].map((Icon, i) => (
@@ -53,7 +53,7 @@ export default function SiteFooter() {
       </div>
       <div className="border-t border-border">
         <div className="mx-auto max-w-7xl px-6 lg:px-10 py-6 text-xs text-muted-foreground text-center">
-          © 2025 Olumide Digital Solution. All Rights Reserved.
+          © 2026 DS Shopify Agency. All Rights Reserved.
         </div>
       </div>
     </footer>

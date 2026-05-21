@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { Menu, X, ArrowRight } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const navLinks = [
   { to: "/", label: "Home" },
@@ -27,9 +28,8 @@ export default function SiteHeader() {
       }`}
     >
       <nav className="mx-auto max-w-7xl px-6 lg:px-10 h-20 flex items-center justify-between">
-        <Link to="/" className="font-display font-bold text-xl tracking-tight">
-          Olumide<span className="text-primary">.</span>
-          <span className="hidden sm:inline text-muted-foreground font-normal ml-1">Digital Solution</span>
+        <Link to="/" className="flex items-center gap-2" aria-label="DS Shopify Agency — Home">
+          <img src={logo} alt="DS Shopify Agency" className="h-12 w-auto md:h-14 drop-shadow-[0_4px_20px_rgba(149,191,71,0.25)]" />
         </Link>
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((l) => (
