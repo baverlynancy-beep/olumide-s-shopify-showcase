@@ -4,22 +4,22 @@ import portrait from "@/assets/olumide-portrait.png";
 import proof4 from "@/assets/proof-4.jpg";
 import { useReveal, Counter } from "@/components/site/Reveal";
 import { BrandLogos } from "@/components/site/BrandLogos";
-import { services, stats, testimonials } from "@/lib/site-data";
+import { services, stats, testimonials, projects } from "@/lib/site-data";
 
 export const Route = createFileRoute("/")({
   component: HomePage,
   head: () => ({
     meta: [
-      { title: "Olumide Digital Solution — Shopify Partner & Store Builder" },
-      { name: "description", content: "Certified Shopify Partner helping brands launch, grow, and scale eCommerce stores with custom design, speed optimization, and CRO." },
-      { property: "og:title", content: "Olumide Digital Solution — Shopify Partner" },
-      { property: "og:description", content: "I build Shopify stores that sell. 50+ stores delivered, $2M+ revenue generated." },
+      { title: "Olumide — Shopify CRO & Growth Specialist" },
+      { name: "description", content: "I help Shopify store owners get more sales — product page optimization, trust signals, mobile CRO, upsells, branding, SEO and speed. Real audits, real results." },
+      { property: "og:title", content: "Olumide — Shopify CRO & Growth Specialist" },
+      { property: "og:description", content: "Real audits. Real fixes. Real sales — $41,088 in a single day for a client store." },
       { property: "og:image", content: portrait },
     ],
   }),
 });
 
-const brands = ["LUNAR", "HYDE", "NORTHCHARGE", "VERDE", "AURORA", "FOLD&CO"];
+const brands = projects.map((p) => p.name);
 
 function HomePage() {
   useReveal();
