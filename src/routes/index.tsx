@@ -38,34 +38,35 @@ function HomePage() {
           <div className="reveal lg:col-span-7">
             <span className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-xs font-medium text-primary">
               <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-              Certified Shopify Partner · Available for Q3
+              Shopify CRO Specialist · Booking Q3 audits
             </span>
             <h1 className="mt-7 font-display font-bold text-[44px] sm:text-6xl lg:text-[80px] leading-[0.98] tracking-[-0.025em]">
-              Shopify stores,<br />
-              built to <span className="text-gradient italic font-bold">sell.</span>
+              More buyers.<br />
+              From the <span className="text-gradient italic font-bold">same traffic.</span>
             </h1>
             <p className="mt-7 text-lg text-muted-foreground max-w-xl leading-relaxed">
-              I design and engineer high-converting Shopify storefronts for ambitious DTC brands —
-              custom theme work, speed, and CRO baked in from day one.
+              I help Shopify store owners fix the leaks killing their sales — product pages,
+              trust signals, mobile UX, upsells, branding and speed. You don't need more ads.
+              You need a store that converts.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
               <Link
-                to="/projects"
+                to="/contact"
                 className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 font-semibold text-primary-foreground hover:opacity-90 transition glow-ring"
               >
-                See the work <ArrowRight className="w-4 h-4" />
+                Get a free store audit <ArrowRight className="w-4 h-4" />
               </Link>
               <Link
-                to="/contact"
+                to="/sales-proof"
                 className="inline-flex items-center gap-2 rounded-full border border-border bg-surface/50 px-7 py-3.5 font-semibold text-foreground hover:border-primary/50 hover:bg-surface transition"
               >
-                Book a free call
+                See real sales proof
               </Link>
             </div>
             <div className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-3 text-sm text-muted-foreground">
-              <div className="flex items-center gap-2"><Check className="w-4 h-4 text-primary" />Shopify Partner</div>
-              <div className="flex items-center gap-2"><Check className="w-4 h-4 text-primary" />50+ Stores Built</div>
-              <div className="flex items-center gap-2"><Check className="w-4 h-4 text-primary" />5★ Reviews</div>
+              <div className="flex items-center gap-2"><Check className="w-4 h-4 text-primary" />Shopify Specialist</div>
+              <div className="flex items-center gap-2"><Check className="w-4 h-4 text-primary" />Audit-Driven</div>
+              <div className="flex items-center gap-2"><Check className="w-4 h-4 text-primary" />Reply in 24h</div>
             </div>
           </div>
 
@@ -117,33 +118,40 @@ function HomePage() {
       {/* MARQUEE / TRUSTED BY */}
       <section className="border-y border-border/60 bg-surface/30">
         <div className="mx-auto max-w-7xl px-6 lg:px-10 py-8 flex flex-wrap items-center justify-between gap-x-12 gap-y-4">
-          <p className="text-xs uppercase tracking-[0.25em] text-muted-foreground">Trusted by 50+ brands</p>
+          <p className="text-xs uppercase tracking-[0.25em] text-muted-foreground">Recent client stores</p>
           <div className="flex flex-wrap items-center gap-x-10 gap-y-3 text-muted-foreground/70 font-display font-bold text-lg tracking-widest">
             {brands.map((b) => <span key={b} className="hover:text-foreground transition">{b}</span>)}
           </div>
         </div>
       </section>
 
-      {/* SERVICES PREVIEW — 3 up */}
+      {/* SERVICES — all 9 */}
       <section className="py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <div className="reveal flex flex-wrap items-end justify-between gap-6 mb-14">
             <div className="max-w-2xl">
-              <p className="text-primary text-xs font-medium uppercase tracking-[0.25em]">What I do</p>
-              <h2 className="mt-3 text-4xl md:text-5xl font-bold leading-tight">A complete Shopify partner — not just a designer.</h2>
+              <p className="text-primary text-xs font-medium uppercase tracking-[0.25em]">What I fix</p>
+              <h2 className="mt-3 text-4xl md:text-5xl font-bold leading-tight">The 9 things killing your Shopify sales.</h2>
+              <p className="mt-5 text-muted-foreground leading-relaxed">
+                Every store owner I work with has the same 9 leaks. I find them, prioritize them by revenue impact,
+                and fix them — in that order.
+              </p>
             </div>
             <Link to="/catalog" className="text-sm font-semibold text-primary inline-flex items-center gap-1.5 hover:gap-2.5 transition-all">
               View packages <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.slice(0, 6).map((s, i) => (
+            {services.map((s, i) => (
               <div
                 key={s.title}
                 className="reveal group rounded-2xl border border-border bg-surface/40 p-7 transition-all hover:border-primary/60 hover:bg-surface hover:-translate-y-1"
                 style={{ transitionDelay: `${i * 50}ms` }}
               >
-                <BrandLogos brands={s.brands} />
+                <div className="flex items-center justify-between">
+                  <BrandLogos brands={s.brands} />
+                  <span className="text-xs font-display font-bold text-primary/70">0{i + 1}</span>
+                </div>
                 <h3 className="mt-5 text-lg font-semibold">{s.title}</h3>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
               </div>
