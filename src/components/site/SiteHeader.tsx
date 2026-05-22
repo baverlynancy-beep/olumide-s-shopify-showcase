@@ -29,7 +29,7 @@ export default function SiteHeader() {
     >
       <nav className="mx-auto max-w-7xl px-6 lg:px-10 h-20 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2" aria-label="DS Shopify Agency — Home">
-          <img src={logo} alt="DS Shopify Agency" className="h-12 w-auto md:h-14 drop-shadow-[0_4px_20px_rgba(149,191,71,0.25)]" />
+          <img src={logo} alt="DS Shopify Agency" className="h-12 w-auto md:h-14 drop-shadow-[0_4px_20px_oklch(0.78_0.13_85/0.35)]" />
         </Link>
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((l) => (
@@ -48,7 +48,7 @@ export default function SiteHeader() {
           to="/contact"
           className="hidden md:inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground hover:opacity-90 transition"
         >
-          Hire Me <ArrowRight className="w-4 h-4" />
+          Free Audit <ArrowRight className="w-4 h-4" />
         </Link>
         <button className="md:hidden text-foreground" onClick={() => setOpen(!open)} aria-label="Menu">
           {open ? <X /> : <Menu />}
