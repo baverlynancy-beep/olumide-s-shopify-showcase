@@ -11,6 +11,7 @@ import {
 import appCss from "../styles.css?url";
 import SiteHeader from "@/components/site/SiteHeader";
 import SiteFooter from "@/components/site/SiteFooter";
+import FloatingWhatsApp from "@/components/site/FloatingWhatsApp";
 
 function NotFoundComponent() {
   return (
@@ -122,6 +123,7 @@ function RootComponent() {
           <Outlet />
         </main>
         <SiteFooter />
+        <FloatingWhatsApp />
       </div>
     </QueryClientProvider>
   );
