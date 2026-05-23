@@ -8,7 +8,7 @@ export const Route = createFileRoute("/sales-proof")({
   head: () => ({
     meta: [
       { title: "Sales Proof — Real Shopify Results | Olumide Digital Solution" },
-      { name: "description", content: "Real screenshots and metrics from Shopify stores I've built — $41K+ single-day sales, PKR 261M total, and more." },
+      { name: "description", content: "Real screenshots and metrics from Shopify stores I've built. $41K+ single day sales, PKR 261M total, and more." },
       { property: "og:title", content: "Sales Proof — Real Shopify Results" },
       { property: "og:description", content: "Real screenshots from stores I've built. The numbers speak for themselves." },
       { property: "og:image", content: proofImages[1].src },
@@ -78,7 +78,7 @@ function SalesProofPage() {
       </section>
 
       {/* TESTIMONIALS */}
-      <section className="py-24 bg-surface/30 border-y border-border">
+      <section className="py-24 section-warm border-y border-border">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <div className="reveal text-center max-w-2xl mx-auto mb-14">
             <p className="text-primary text-xs font-medium uppercase tracking-[0.25em]">Client words</p>

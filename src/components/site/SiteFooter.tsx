@@ -16,9 +16,9 @@ export default function SiteFooter() {
     <footer className="border-t border-border bg-surface/40">
       <div className="mx-auto max-w-7xl px-6 lg:px-10 py-16 grid md:grid-cols-3 gap-10">
         <div>
-          <img src={logo} alt="DS Shopify Agency" className="h-16 w-auto" />
+          <img src={logo} alt="ODS Shopify Agency" className="h-20 w-auto" />
           <p className="mt-4 text-sm text-muted-foreground max-w-xs">
-            Your Shopify Growth Partner — building stores that perform.
+            Your Shopify growth partner. Building stores that perform.
           </p>
           <div className="mt-5 inline-flex items-center gap-2 rounded-lg border border-primary/30 bg-primary/10 px-3 py-2 text-xs text-primary font-semibold">
             <Check className="w-3.5 h-3.5" /> Shopify Partner
@@ -53,7 +53,7 @@ export default function SiteFooter() {
       </div>
       <div className="border-t border-border">
         <div className="mx-auto max-w-7xl px-6 lg:px-10 py-6 text-xs text-muted-foreground text-center">
-          © 2026 DS Shopify Agency. All Rights Reserved.
+          © 2026 ODS Shopify Agency. All Rights Reserved.
         </div>
       </div>
     </footer>

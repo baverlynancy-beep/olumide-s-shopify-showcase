@@ -9,9 +9,9 @@ export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
       { title: "Contact — Request a Free Shopify Audit | Olumide" },
-      { name: "description", content: "Send a brief and get a free Shopify store audit — PDP, trust, mobile CRO, upsells, branding and speed. Reply within 24 hours." },
-      { property: "og:title", content: "Contact Olumide — Free Shopify Audit" },
-      { property: "og:description", content: "Send a brief. Get a free audit. No pitch — just clear next steps." },
+      { name: "description", content: "Send a brief and get a free Shopify store audit. PDP, trust, mobile CRO, upsells, branding and speed. Reply within 24 hours." },
+      { property: "og:title", content: "Contact Olumide. Free Shopify Audit" },
+      { property: "og:description", content: "Send a brief. Get a free audit. No pitch, just clear next steps." },
     ],
   }),
 });
@@ -52,7 +52,7 @@ function ContactPage() {
       <PageHero
         eyebrow="Let's talk"
         title={<>Tell me about <span className="text-gradient">your store.</span></>}
-        subtitle="Send a short brief and I'll reply with a free audit + next steps within 24 hours."
+        subtitle="Send a short brief and I'll reply with a free audit plus next steps within 24 hours."
       />
 
       <section className="pb-32">
@@ -93,10 +93,10 @@ function ContactPage() {
                 <Field label="Brand / Store URL" name="brand" placeholder="https://yourbrand.com (optional)" />
                 <div>
                   <label className="block text-xs font-medium text-muted-foreground uppercase tracking-widest mb-2">Budget</label>
-                  <select name="budget" defaultValue="$500 – $1,500" className="w-full rounded-xl border border-border bg-background/60 px-4 py-3 text-sm focus:outline-none focus:border-primary transition">
+                  <select name="budget" defaultValue="$500 to $1,500" className="w-full rounded-xl border border-border bg-background/60 px-4 py-3 text-sm focus:outline-none focus:border-primary transition">
                     <option>Under $500</option>
-                    <option>$500 – $1,500</option>
-                    <option>$1,500 – $5,000</option>
+                    <option>$500 to $1,500</option>
+                    <option>$1,500 to $5,000</option>
                     <option>$5,000+</option>
                   </select>
                 </div>
@@ -127,7 +127,7 @@ function ContactPage() {
                   )}
                 </button>
                 <p className="text-[11px] text-muted-foreground text-center">
-                  Goes straight to my inbox. No spam, no list — just a reply.
+                  Goes straight to my inbox. No spam, no list. Just a reply.
                 </p>
               </form>
             )}
@@ -141,7 +141,7 @@ function ContactPage() {
             <div className="reveal rounded-2xl border border-primary/30 bg-primary/5 p-6">
               <p className="text-xs uppercase tracking-widest text-primary font-semibold">Response time</p>
               <p className="mt-2 text-sm text-foreground/90 leading-relaxed">
-                I personally reply to every message within <strong>24 hours</strong>, Monday – Friday.
+                I personally reply to every message within <strong>24 hours</strong>, Monday to Friday.
               </p>
             </div>
 
@@ -150,7 +150,7 @@ function ContactPage() {
               <ul className="mt-3 space-y-2 text-sm text-foreground/90">
                 <li className="flex gap-2"><Check className="w-4 h-4 text-primary mt-0.5" /> A free 5-minute audit of your store</li>
                 <li className="flex gap-2"><Check className="w-4 h-4 text-primary mt-0.5" /> The top 3 leaks costing you sales</li>
-                <li className="flex gap-2"><Check className="w-4 h-4 text-primary mt-0.5" /> A clear quote — or honest "not a fit"</li>
+                <li className="flex gap-2"><Check className="w-4 h-4 text-primary mt-0.5" /> A clear quote, or honest "not a fit"</li>
               </ul>
             </div>
           </div>

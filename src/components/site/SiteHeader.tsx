@@ -27,9 +27,9 @@ export default function SiteHeader() {
         scrolled ? "glass border-b border-border/60" : ""
       }`}
     >
-      <nav className="mx-auto max-w-7xl px-6 lg:px-10 h-20 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-2" aria-label="DS Shopify Agency — Home">
-          <img src={logo} alt="DS Shopify Agency" className="h-12 w-auto md:h-14 drop-shadow-[0_4px_20px_oklch(0.78_0.13_85/0.35)]" />
+      <nav className="mx-auto max-w-7xl px-6 lg:px-10 h-24 md:h-28 flex items-center justify-between">
+        <Link to="/" className="flex items-center gap-2" aria-label="ODS Shopify Agency Home">
+          <img src={logo} alt="ODS Shopify Agency" className="h-16 w-auto md:h-20 drop-shadow-[0_4px_20px_oklch(0.78_0.13_85/0.4)]" />
         </Link>
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((l) => (

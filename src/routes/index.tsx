@@ -4,6 +4,7 @@ import portrait from "@/assets/olumide-portrait.png";
 import proof4 from "@/assets/proof-4.jpg";
 import { useReveal, Counter } from "@/components/site/Reveal";
 import { BrandLogos } from "@/components/site/BrandLogos";
+import FAQ from "@/components/site/FAQ";
 import { services, stats, testimonials, projects } from "@/lib/site-data";
 
 export const Route = createFileRoute("/")({
@@ -11,9 +12,9 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Olumide — Shopify CRO & Growth Specialist" },
-      { name: "description", content: "I help Shopify store owners get more sales — product page optimization, trust signals, mobile CRO, upsells, branding, SEO and speed. Real audits, real results." },
+      { name: "description", content: "I help Shopify store owners get more sales. Product page optimization, trust signals, mobile CRO, upsells, branding, SEO and speed. Real audits, real results." },
       { property: "og:title", content: "Olumide — Shopify CRO & Growth Specialist" },
-      { property: "og:description", content: "Real audits. Real fixes. Real sales — $41,088 in a single day for a client store." },
+      { property: "og:description", content: "Real audits. Real fixes. Real sales. $41,088 in a single day for a client store." },
       { property: "og:image", content: portrait },
     ],
   }),
@@ -26,73 +27,67 @@ function HomePage() {
 
   return (
     <div>
-      {/* HERO — editorial split */}
-      <section className="relative pt-28 pb-20 lg:pt-36 lg:pb-28 overflow-hidden">
+      {/* HERO */}
+      <section className="relative pt-24 pb-16 lg:pt-32 lg:pb-24 overflow-hidden section-noir">
         <div className="absolute inset-0 -z-10">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_75%_20%,oklch(0.78_0.13_85/0.14),transparent_70%)]" />
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_50%_40%_at_15%_85%,oklch(0.88_0.11_88/0.06),transparent_70%)]" />
           <div className="absolute inset-0 grid-bg opacity-[0.07] [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)]" />
         </div>
 
-        <div className="relative mx-auto max-w-7xl px-6 lg:px-10 grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <div className="relative mx-auto max-w-6xl px-6 lg:px-10 grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           <div className="reveal lg:col-span-7">
             <span className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-xs font-medium text-primary">
               <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-              Shopify CRO Specialist · Booking Q3 audits
+              Shopify CRO Specialist. Booking Q3 audits.
             </span>
-            <h1 className="mt-7 font-display font-bold text-[44px] sm:text-6xl lg:text-[80px] leading-[0.98] tracking-[-0.025em]">
+            <h1 className="mt-6 font-display text-[36px] sm:text-5xl lg:text-[64px] leading-[1.02] tracking-[-0.025em]">
               More buyers.<br />
-              From the <span className="text-gradient italic font-bold">same traffic.</span>
+              From the <span className="text-gradient italic">same traffic.</span>
             </h1>
-            <p className="mt-7 text-lg text-muted-foreground max-w-xl leading-relaxed">
-              I help Shopify store owners fix the leaks killing their sales — product pages,
-              trust signals, mobile UX, upsells, branding and speed. You don't need more ads.
-              You need a store that converts.
+            <p className="mt-6 text-base lg:text-lg text-muted-foreground max-w-xl leading-relaxed">
+              I help Shopify store owners fix the leaks killing their sales. Product pages, trust signals, mobile UX, upsells, branding and speed. You don't need more ads. You need a store that converts.
             </p>
-            <div className="mt-10 flex flex-wrap gap-4">
+            <div className="mt-8 flex flex-wrap gap-3">
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 font-semibold text-primary-foreground hover:opacity-90 transition glow-ring"
+                className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 font-semibold text-primary-foreground hover:opacity-90 transition glow-ring"
               >
                 Get a free store audit <ArrowRight className="w-4 h-4" />
               </Link>
               <Link
                 to="/sales-proof"
-                className="inline-flex items-center gap-2 rounded-full border border-border bg-surface/50 px-7 py-3.5 font-semibold text-foreground hover:border-primary/50 hover:bg-surface transition"
+                className="inline-flex items-center gap-2 rounded-full border border-border bg-surface/50 px-6 py-3 font-semibold text-foreground hover:border-primary/50 hover:bg-surface transition"
               >
                 See real sales proof
               </Link>
             </div>
-            <div className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-3 text-sm text-muted-foreground">
+            <div className="mt-10 flex flex-wrap items-center gap-x-7 gap-y-3 text-sm text-muted-foreground">
               <div className="flex items-center gap-2"><Check className="w-4 h-4 text-primary" />Shopify Specialist</div>
-              <div className="flex items-center gap-2"><Check className="w-4 h-4 text-primary" />Audit-Driven</div>
+              <div className="flex items-center gap-2"><Check className="w-4 h-4 text-primary" />Audit driven</div>
               <div className="flex items-center gap-2"><Check className="w-4 h-4 text-primary" />Reply in 24h</div>
             </div>
           </div>
 
-          {/* Portrait — refined editorial frame */}
+          {/* Portrait */}
           <div className="reveal lg:col-span-5 relative flex justify-center lg:justify-end">
-            <div className="relative w-[300px] sm:w-[380px] lg:w-[420px]">
-              {/* soft halo */}
+            <div className="relative w-[260px] sm:w-[320px] lg:w-[360px]">
               <div className="absolute -inset-8 rounded-[2.5rem] bg-gradient-to-tr from-primary/20 via-transparent to-primary/10 blur-3xl" />
-              {/* card */}
               <div className="relative rounded-[2rem] border border-border bg-surface/60 backdrop-blur-sm p-3 shadow-[0_30px_80px_-30px_oklch(0_0_0/0.6)]">
                 <div className="relative aspect-[4/5] overflow-hidden rounded-[1.5rem] bg-surface-elevated">
                   <img
                     src={portrait}
-                    alt="Olumide — Certified Shopify Partner"
+                    alt="Olumide, Certified Shopify Partner"
                     className="w-full h-full object-cover object-top"
                   />
-                  {/* corner badge */}
                   <div className="absolute top-4 left-4 flex items-center gap-2 rounded-full bg-background/80 backdrop-blur px-3 py-1.5 text-[11px] font-semibold border border-border">
                     <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
                     Online
                   </div>
-                  {/* bottom label */}
                   <div className="absolute inset-x-3 bottom-3 rounded-2xl bg-background/85 backdrop-blur border border-border p-4 flex items-center justify-between">
                     <div>
-                      <div className="font-display font-bold text-base">Olumide A.</div>
-                      <div className="text-[11px] text-muted-foreground">Shopify Expert · Lagos, NG</div>
+                      <div className="font-display text-base">Olumide A.</div>
+                      <div className="text-[11px] text-muted-foreground">Shopify Expert. Lagos, NG</div>
                     </div>
                     <div className="flex gap-0.5 text-primary">
                       {[...Array(5)].map((_, i) => <Star key={i} className="w-3.5 h-3.5 fill-primary" />)}
@@ -100,13 +95,12 @@ function HomePage() {
                   </div>
                 </div>
               </div>
-              {/* floating stat chip */}
               <div className="absolute -left-6 sm:-left-10 top-1/3 hidden sm:flex items-center gap-3 rounded-2xl border border-border bg-background/90 backdrop-blur px-4 py-3 shadow-xl">
                 <div className="w-9 h-9 rounded-full bg-primary/15 border border-primary/30 flex items-center justify-center">
                   <TrendingUp className="w-4 h-4 text-primary" />
                 </div>
                 <div>
-                  <div className="font-display font-bold text-sm">+42% AOV</div>
+                  <div className="font-display text-sm">+42% AOV</div>
                   <div className="text-[10px] text-muted-foreground">last client</div>
                 </div>
               </div>
@@ -115,26 +109,25 @@ function HomePage() {
         </div>
       </section>
 
-      {/* MARQUEE / TRUSTED BY */}
-      <section className="border-y border-border/60 bg-surface/30">
-        <div className="mx-auto max-w-7xl px-6 lg:px-10 py-8 flex flex-wrap items-center justify-between gap-x-12 gap-y-4">
+      {/* TRUSTED BY */}
+      <section className="section-warm">
+        <div className="mx-auto max-w-7xl px-6 lg:px-10 py-7 flex flex-wrap items-center justify-between gap-x-12 gap-y-4">
           <p className="text-xs uppercase tracking-[0.25em] text-muted-foreground">Recent client stores</p>
-          <div className="flex flex-wrap items-center gap-x-10 gap-y-3 text-muted-foreground/70 font-display font-bold text-lg tracking-widest">
+          <div className="flex flex-wrap items-center gap-x-10 gap-y-3 text-muted-foreground/70 font-display text-lg tracking-widest">
             {brands.map((b) => <span key={b} className="hover:text-foreground transition">{b}</span>)}
           </div>
         </div>
       </section>
 
-      {/* SERVICES — all 9 */}
-      <section className="py-24 lg:py-32">
+      {/* SERVICES */}
+      <section className="py-20 lg:py-28 section-noir">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
-          <div className="reveal flex flex-wrap items-end justify-between gap-6 mb-14">
+          <div className="reveal flex flex-wrap items-end justify-between gap-6 mb-12">
             <div className="max-w-2xl">
               <p className="text-primary text-xs font-medium uppercase tracking-[0.25em]">What I fix</p>
-              <h2 className="mt-3 text-4xl md:text-5xl font-bold leading-tight">The 9 things killing your Shopify sales.</h2>
-              <p className="mt-5 text-muted-foreground leading-relaxed">
-                Every store owner I work with has the same 9 leaks. I find them, prioritize them by revenue impact,
-                and fix them — in that order.
+              <h2 className="mt-3 text-3xl md:text-4xl lg:text-5xl leading-tight">The 9 things killing your Shopify sales.</h2>
+              <p className="mt-4 text-muted-foreground leading-relaxed">
+                Every store owner I work with has the same 9 leaks. I find them, prioritise them by revenue impact, and fix them in that order.
               </p>
             </div>
             <Link to="/catalog" className="text-sm font-semibold text-primary inline-flex items-center gap-1.5 hover:gap-2.5 transition-all">
@@ -150,7 +143,7 @@ function HomePage() {
               >
                 <div className="flex items-center justify-between">
                   <BrandLogos brands={s.brands} />
-                  <span className="text-xs font-display font-bold text-primary/70">0{i + 1}</span>
+                  <span className="text-xs font-display text-primary/70">0{i + 1}</span>
                 </div>
                 <h3 className="mt-5 text-lg font-semibold">{s.title}</h3>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
@@ -160,22 +153,21 @@ function HomePage() {
         </div>
       </section>
 
-      {/* FEATURED PROOF — single editorial block */}
-      <section className="py-24 lg:py-32 bg-surface/30 border-y border-border">
-        <div className="mx-auto max-w-7xl px-6 lg:px-10 grid lg:grid-cols-2 gap-14 items-center">
+      {/* FEATURED PROOF */}
+      <section className="py-20 lg:py-28 section-warm">
+        <div className="mx-auto max-w-7xl px-6 lg:px-10 grid lg:grid-cols-2 gap-12 items-center">
           <div className="reveal">
             <p className="text-primary text-xs font-medium uppercase tracking-[0.25em]">Real results</p>
-            <h2 className="mt-3 text-4xl md:text-5xl font-bold leading-tight">
-              $41,088 in a <span className="text-gradient">single day.</span>
+            <h2 className="mt-3 text-3xl md:text-4xl lg:text-5xl leading-tight">
+              $41,088 in a <span className="text-gradient italic">single day.</span>
             </h2>
             <p className="mt-5 text-muted-foreground leading-relaxed max-w-lg">
-              The stores I build aren't just pretty — they perform. From new launches to scale-ups,
-              clients consistently see breakthrough numbers in their first 90 days.
+              The stores I build aren't just pretty. They perform. From new launches to scale ups, clients consistently see breakthrough numbers in their first 90 days.
             </p>
-            <div className="mt-10 grid grid-cols-2 gap-6 max-w-md">
+            <div className="mt-10 grid grid-cols-2 gap-5 max-w-md">
               {stats.slice(0, 4).map((s) => (
                 <div key={s.label} className="rounded-2xl border border-border bg-background/40 p-5">
-                  <div className="font-display text-3xl font-bold text-gradient">
+                  <div className="font-display text-3xl text-gradient">
                     {(s as any).prefix ?? ""}<Counter end={s.value} suffix={s.suffix} />
                   </div>
                   <p className="mt-1 text-xs text-muted-foreground">{s.label}</p>
@@ -195,13 +187,13 @@ function HomePage() {
         </div>
       </section>
 
-      {/* TESTIMONIAL highlight */}
-      <section className="py-24 lg:py-32">
+      {/* TESTIMONIAL */}
+      <section className="py-20 lg:py-24 section-noir">
         <div className="mx-auto max-w-4xl px-6 lg:px-10 text-center reveal">
           <div className="flex justify-center gap-1 text-primary mb-6">
             {[...Array(5)].map((_, i) => <Star key={i} className="w-5 h-5 fill-primary" />)}
           </div>
-          <blockquote className="font-display text-2xl md:text-4xl font-medium leading-tight tracking-tight">
+          <blockquote className="font-display text-xl md:text-3xl leading-snug tracking-tight">
             "{testimonials[0].text}"
           </blockquote>
           <div className="mt-8 flex items-center justify-center gap-3">
@@ -216,21 +208,26 @@ function HomePage() {
         </div>
       </section>
 
+      {/* FAQ */}
+      <div className="section-warm">
+        <FAQ />
+      </div>
+
       {/* CTA */}
-      <section className="pb-24 lg:pb-32">
+      <section className="pb-24 pt-20 lg:pb-32 section-noir">
         <div className="mx-auto max-w-6xl px-6 lg:px-10">
-          <div className="reveal relative rounded-3xl border border-primary/30 bg-gradient-to-br from-primary/10 via-surface to-background p-12 lg:p-16 overflow-hidden text-center">
+          <div className="reveal relative rounded-3xl border border-primary/30 bg-gradient-to-br from-primary/10 via-surface to-background p-10 lg:p-14 overflow-hidden text-center">
             <div className="absolute inset-0 grid-bg opacity-30 [mask-image:radial-gradient(ellipse_at_center,black,transparent_70%)]" />
             <div className="relative">
-              <h2 className="font-display text-4xl md:text-5xl font-bold leading-tight max-w-3xl mx-auto">
-                Ready to launch a store that <span className="text-gradient">actually converts?</span>
+              <h2 className="font-display text-3xl md:text-4xl lg:text-5xl leading-tight max-w-3xl mx-auto">
+                Ready to launch a store that <span className="text-gradient italic">actually converts?</span>
               </h2>
               <p className="mt-5 text-muted-foreground max-w-xl mx-auto">
-                Free 30-minute discovery call. No pitch — just a roadmap for your store.
+                Free 30 minute discovery call. No pitch. Just a clear roadmap for your store.
               </p>
               <Link
                 to="/contact"
-                className="mt-9 inline-flex items-center gap-3 rounded-full bg-primary px-8 py-4 text-base font-bold text-primary-foreground hover:opacity-90 transition glow-ring"
+                className="mt-8 inline-flex items-center gap-3 rounded-full bg-primary px-7 py-3.5 text-base font-bold text-primary-foreground hover:opacity-90 transition glow-ring"
               >
                 Book your free call <ArrowRight className="w-5 h-5" />
               </Link>
