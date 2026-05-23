@@ -21,7 +21,7 @@ function CatalogPage() {
   return (
     <div>
       <PageHero
-        eyebrow="Catalog & Pricing"
+        eyebrow="Catalog and Pricing"
         title={<>Pick the package that <span className="text-gradient">fits your stage.</span></>}
         subtitle="Transparent pricing. No surprises. Everything you need to launch and scale on Shopify."
       />
@@ -71,7 +71,7 @@ function CatalogPage() {
       </section>
 
       {/* WHAT'S INCLUDED — services list */}
-      <section className="py-24 bg-surface/30 border-y border-border">
+      <section className="py-24 section-warm border-y border-border">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <div className="reveal max-w-2xl mb-14">
             <p className="text-primary text-xs font-medium uppercase tracking-[0.25em]">Every package includes</p>
@@ -97,7 +97,7 @@ function CatalogPage() {
       <section className="py-24">
         <div className="mx-auto max-w-4xl px-6 lg:px-10">
           <div className="reveal rounded-3xl border border-border bg-surface/40 p-10 lg:p-14 text-center">
-            <h2 className="font-display text-3xl md:text-4xl font-bold">Need something custom?</h2>
+            <h2 className="font-display text-3xl md:text-4xl">Need something custom?</h2>
             <p className="mt-4 text-muted-foreground max-w-xl mx-auto">
               Headless, complex migrations, marketplace, or B2B? Let's scope it together.
             </p>
