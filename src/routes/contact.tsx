@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { ArrowRight, Mail, MessageCircle, Check, Loader2 } from "lucide-react";
 import { useReveal, PageHero } from "@/components/site/Reveal";
-import { EMAIL, FORM_ENDPOINT, WHATSAPP_DISPLAY, WHATSAPP_URL } from "@/lib/site-data";
+import { EMAIL, WHATSAPP_DISPLAY, WHATSAPP_URL } from "@/lib/site-data";
 
 export const Route = createFileRoute("/contact")({
   component: ContactPage,
@@ -29,13 +29,13 @@ function ContactPage() {
     const formData = new FormData(form);
     const payload = Object.fromEntries(formData.entries());
     try {
-      const res = await fetch(FORM_ENDPOINT, {
+      const res = await fetch("/api/public/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify(payload),
       });
       const data = await res.json().catch(() => ({}));
-      if (res.ok && (data.success === "true" || data.success === true)) {
+      if (res.ok && data.success) {
         setStatus("sent");
         form.reset();
       } else {
