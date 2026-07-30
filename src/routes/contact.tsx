@@ -20,11 +20,27 @@ function ContactPage() {
   useReveal();
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
+  const [fallbackUrl, setFallbackUrl] = useState("");
+
+  function buildWhatsAppUrl(p: Record<string, any>) {
+    const text = [
+      `Hi Olumide, here is my brief.`,
+      ``,
+      `Name: ${p.name || ""}`,
+      `Email: ${p.email || ""}`,
+      `Store: ${p.brand || "n/a"}`,
+      `Budget: ${p.budget || "n/a"}`,
+      ``,
+      `${p.message || ""}`,
+    ].join("\n");
+    return `${WHATSAPP_URL.split("?")[0]}?text=${encodeURIComponent(text)}`;
+  }
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setStatus("sending");
     setErrorMsg("");
+    setFallbackUrl("");
     const form = e.currentTarget;
     const formData = new FormData(form);
     const payload = Object.fromEntries(formData.entries());
@@ -44,6 +60,7 @@ function ContactPage() {
     } catch (err: any) {
       setStatus("error");
       setErrorMsg(err.message || "Network error. Please try WhatsApp.");
+      setFallbackUrl(buildWhatsAppUrl(payload));
     }
   }
 
