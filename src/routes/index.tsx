@@ -15,8 +15,11 @@ export const Route = createFileRoute("/")({
       { name: "description", content: "I help Shopify store owners get more sales. Product page optimization, trust signals, mobile CRO, upsells, branding, SEO and speed. Real audits, real results." },
       { property: "og:title", content: "Olumide — Shopify CRO & Growth Specialist" },
       { property: "og:description", content: "Real audits. Real fixes. Real sales. $41,088 in a single day for a client store." },
-      { property: "og:image", content: portrait },
+      { property: "og:image", content: `https://olumide-glow-folio.lovable.app${portrait}` },
+      { name: "twitter:image", content: `https://olumide-glow-folio.lovable.app${portrait}` },
+      { property: "og:url", content: "https://olumide-glow-folio.lovable.app/" },
     ],
+    links: [{ rel: "canonical", href: "https://olumide-glow-folio.lovable.app/" }],
   }),
 });
 
