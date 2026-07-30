@@ -55,9 +55,23 @@ export const Route = createFileRoute("/api/public/contact")({
             message,
           };
 
+          // FormSubmit rejects requests without a real Origin/Referer ("open this page
+          // through a web server"). Forward the site origin so it accepts server-side posts.
+          const origin =
+            request.headers.get("origin") ||
+            new URL(request.url).origin ||
+            "https://olumide-glow-folio.lovable.app";
+
           const upstream = await fetch(`https://formsubmit.co/ajax/${TARGET_EMAIL}`, {
             method: "POST",
-            headers: { "Content-Type": "application/json", Accept: "application/json" },
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json",
+              Origin: origin,
+              Referer: `${origin}/contact`,
+              "User-Agent":
+                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36",
+            },
             body: JSON.stringify(payload),
           });
           const data: any = await upstream.json().catch(() => ({}));
