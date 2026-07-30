@@ -129,7 +129,22 @@ function ContactPage() {
                 </div>
 
                 {status === "error" && (
-                  <p className="text-sm text-red-400">{errorMsg}</p>
+                  <div className="rounded-2xl border border-primary/30 bg-primary/5 p-5">
+                    <p className="text-sm text-foreground/90">{errorMsg}</p>
+                    {fallbackUrl && (
+                      <a
+                        href={fallbackUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-4 inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground hover:opacity-90 transition"
+                      >
+                        <MessageCircle className="w-4 h-4" /> Send this brief on WhatsApp
+                      </a>
+                    )}
+                    <p className="mt-3 text-xs text-muted-foreground">
+                      Your message is kept in the form, nothing was lost.
+                    </p>
+                  </div>
                 )}
 
                 <button
