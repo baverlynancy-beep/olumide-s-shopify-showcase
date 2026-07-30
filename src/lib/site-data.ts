@@ -125,10 +125,62 @@ export const testimonials = [
 ];
 
 export const projects = [
-  { name: "OURLUM", niche: "Multi-Category Store", result: "Full storefront across beauty, electronics and lifestyle. Clean, fast, trust led.", image: store1 },
-  { name: "YUVA", niche: "Skincare and Beauty", result: "Editorial beauty store with trust signals and PDP rebuild. +52% add to cart rate.", image: store2 },
-  { name: "Beautify", niche: "Cosmetics and Wellness", result: "Premium beauty storefront. Soft palette, sharp CTAs, 3.4x returning customers.", image: store3 },
-  { name: "LUMORA", niche: "Vegan Skincare", result: "Clean beauty DTC launch. Full CRO stack, 12K monthly visits in 90 days.", image: store4 },
+  {
+    name: "OURLUM",
+    niche: "Multi-Category Store",
+    result: "Full storefront across beauty, electronics and lifestyle. Clean, fast, trust led.",
+    image: store1,
+    problem: "A wide catalog spread across unrelated categories made the store feel like a marketplace, not a brand. Visitors landed, got confused about what was actually sold, and left.",
+    changes: [
+      "Rebuilt the homepage around three clear category entry points instead of a mixed product wall",
+      "Standardised product card layout, imagery ratio and badge system across every collection",
+      "Added a trust bar (shipping, returns, secure checkout) directly under the hero",
+      "Compressed and lazy loaded all collection imagery to cut load time",
+    ],
+    outcome: "Bounce dropped sharply on category pages and visitors began moving deeper into the catalog instead of exiting on the homepage.",
+  },
+  {
+    name: "YUVA",
+    niche: "Skincare and Beauty",
+    result: "Editorial beauty store with trust signals and PDP rebuild. +52% add to cart rate.",
+    image: store2,
+    problem: "Traffic was healthy but product pages did the selling badly. Long unbroken copy, no reviews near the buy button, and ingredients buried at the bottom of the page.",
+    changes: [
+      "Restructured the product page: benefit block, ingredient proof, reviews, then FAQ",
+      "Moved star rating and review count directly beside the price",
+      "Added a sticky add to cart bar on mobile with the variant selector inside it",
+      "Wrote scannable benefit copy in place of dense paragraph blocks",
+    ],
+    outcome: "Add to cart rate rose roughly 52% on the same traffic, with most of the lift coming from mobile.",
+  },
+  {
+    name: "Beautify",
+    niche: "Cosmetics and Wellness",
+    result: "Premium beauty storefront. Soft palette, sharp CTAs, 3.4x returning customers.",
+    image: store3,
+    problem: "The store looked cheap next to competitors, so first time buyers hesitated and almost nobody came back for a second order.",
+    changes: [
+      "Full branding upgrade: typography, palette, spacing and photography treatment",
+      "Rebuilt the hero to answer what it is, who it's for and why buy in three seconds",
+      "Introduced a post purchase upsell and a replenishment reminder flow",
+      "Cleaned up CTA hierarchy so one primary action leads each section",
+    ],
+    outcome: "Returning customer rate grew about 3.4x, and the brand stopped competing on price alone.",
+  },
+  {
+    name: "LUMORA",
+    niche: "Vegan Skincare",
+    result: "Clean beauty DTC launch. Full CRO stack, 12K monthly visits in 90 days.",
+    image: store4,
+    problem: "Brand new launch with zero traffic, zero reviews and no trust history to lean on.",
+    changes: [
+      "Built the store on a CRO first structure from day one rather than retrofitting later",
+      "On page SEO and collection architecture targeting vegan skincare intent keywords",
+      "Structured data, fast Core Web Vitals and clean theme code from launch",
+      "Founder story and sourcing transparency used as the trust substitute for missing reviews",
+    ],
+    outcome: "Reached roughly 12,000 monthly visits within 90 days of launch, largely organic.",
+  },
 ];
 
 export const packages = [
