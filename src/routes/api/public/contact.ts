@@ -78,21 +78,24 @@ export const Route = createFileRoute("/api/public/contact")({
           const ok = upstream.ok && (data.success === "true" || data.success === true);
 
           if (!ok) {
+            const needsActivation = /activat/i.test(String(data?.message || ""));
+            // Return 200 with success:false. A 5xx here is treated as an app crash,
+            // but this is a normal upstream rejection the UI already handles.
             return new Response(
               JSON.stringify({
                 success: false,
-                message:
-                  data?.message ||
-                  "Email service did not accept the brief. If this is the first message, check your inbox to activate the form, then try again.",
+                message: needsActivation
+                  ? "The email service needs a one-time activation. Please use WhatsApp or email for now."
+                  : "Could not deliver the brief right now. Please WhatsApp or email me instead.",
               }),
-              { status: 502, headers: cors },
+              { status: 200, headers: cors },
             );
           }
           return new Response(JSON.stringify({ success: true }), { status: 200, headers: cors });
         } catch (err: any) {
           return new Response(
             JSON.stringify({ success: false, message: "Server error. Please WhatsApp me instead." }),
-            { status: 500, headers: cors },
+            { status: 200, headers: cors },
           );
         }
       },
