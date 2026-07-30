@@ -15,8 +15,11 @@ export const Route = createFileRoute("/")({
       { name: "description", content: "I help Shopify store owners get more sales. Product page optimization, trust signals, mobile CRO, upsells, branding, SEO and speed. Real audits, real results." },
       { property: "og:title", content: "Olumide — Shopify CRO & Growth Specialist" },
       { property: "og:description", content: "Real audits. Real fixes. Real sales. $41,088 in a single day for a client store." },
-      { property: "og:image", content: portrait },
+      { property: "og:image", content: `https://olumide-glow-folio.lovable.app${portrait}` },
+      { name: "twitter:image", content: `https://olumide-glow-folio.lovable.app${portrait}` },
+      { property: "og:url", content: "https://olumide-glow-folio.lovable.app/" },
     ],
+    links: [{ rel: "canonical", href: "https://olumide-glow-folio.lovable.app/" }],
   }),
 });
 
@@ -119,6 +122,40 @@ function HomePage() {
         </div>
       </section>
 
+      {/* FEATURED PROOF */}
+      <section className="py-20 lg:py-28 section-warm">
+        <div className="mx-auto max-w-7xl px-6 lg:px-10 grid lg:grid-cols-2 gap-12 items-center">
+          <div className="reveal order-2 lg:order-1">
+            <p className="text-primary text-xs font-medium uppercase tracking-[0.25em]">Real results</p>
+            <h2 className="mt-3 text-3xl md:text-4xl lg:text-5xl leading-tight">
+              $41,088 in a <span className="text-gradient italic">single day.</span>
+            </h2>
+            <p className="mt-5 text-muted-foreground leading-relaxed max-w-lg">
+              The stores I build aren't just pretty. They perform. From new launches to scale ups, clients consistently see breakthrough numbers in their first 90 days.
+            </p>
+            <div className="mt-10 grid grid-cols-2 gap-5 max-w-md">
+              {stats.slice(0, 4).map((s) => (
+                <div key={s.label} className="rounded-2xl border border-border bg-background/40 p-5">
+                  <div className="font-display text-3xl text-gradient">
+                    {(s as any).prefix ?? ""}<Counter end={s.value} suffix={s.suffix} />
+                  </div>
+                  <p className="mt-1 text-xs text-muted-foreground">{s.label}</p>
+                </div>
+              ))}
+            </div>
+            <Link to="/sales-proof" className="mt-10 inline-flex items-center gap-2 text-sm font-semibold text-primary hover:gap-3 transition-all">
+              See all sales proof <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+          <div className="reveal relative order-1 lg:order-2">
+            <div className="absolute -inset-6 rounded-3xl bg-gradient-to-tr from-primary/20 to-transparent blur-3xl" />
+            <div className="relative rounded-3xl border border-border bg-background overflow-hidden shadow-2xl">
+              <img src={proof4} alt="$41,088 Shopify single day sales" className="w-full h-auto object-cover" />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* SERVICES */}
       <section className="py-20 lg:py-28 section-noir">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
@@ -149,40 +186,6 @@ function HomePage() {
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* FEATURED PROOF */}
-      <section className="py-20 lg:py-28 section-warm">
-        <div className="mx-auto max-w-7xl px-6 lg:px-10 grid lg:grid-cols-2 gap-12 items-center">
-          <div className="reveal">
-            <p className="text-primary text-xs font-medium uppercase tracking-[0.25em]">Real results</p>
-            <h2 className="mt-3 text-3xl md:text-4xl lg:text-5xl leading-tight">
-              $41,088 in a <span className="text-gradient italic">single day.</span>
-            </h2>
-            <p className="mt-5 text-muted-foreground leading-relaxed max-w-lg">
-              The stores I build aren't just pretty. They perform. From new launches to scale ups, clients consistently see breakthrough numbers in their first 90 days.
-            </p>
-            <div className="mt-10 grid grid-cols-2 gap-5 max-w-md">
-              {stats.slice(0, 4).map((s) => (
-                <div key={s.label} className="rounded-2xl border border-border bg-background/40 p-5">
-                  <div className="font-display text-3xl text-gradient">
-                    {(s as any).prefix ?? ""}<Counter end={s.value} suffix={s.suffix} />
-                  </div>
-                  <p className="mt-1 text-xs text-muted-foreground">{s.label}</p>
-                </div>
-              ))}
-            </div>
-            <Link to="/sales-proof" className="mt-10 inline-flex items-center gap-2 text-sm font-semibold text-primary hover:gap-3 transition-all">
-              See all sales proof <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-          <div className="reveal relative">
-            <div className="absolute -inset-6 rounded-3xl bg-gradient-to-tr from-primary/20 to-transparent blur-3xl" />
-            <div className="relative rounded-3xl border border-border bg-background overflow-hidden shadow-2xl">
-              <img src={proof4} alt="$41,088 Shopify single day sales" className="w-full h-auto object-cover" />
-            </div>
           </div>
         </div>
       </section>

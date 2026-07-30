@@ -20,11 +20,27 @@ function ContactPage() {
   useReveal();
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
+  const [fallbackUrl, setFallbackUrl] = useState("");
+
+  function buildWhatsAppUrl(p: Record<string, any>) {
+    const text = [
+      `Hi Olumide, here is my brief.`,
+      ``,
+      `Name: ${p.name || ""}`,
+      `Email: ${p.email || ""}`,
+      `Store: ${p.brand || "n/a"}`,
+      `Budget: ${p.budget || "n/a"}`,
+      ``,
+      `${p.message || ""}`,
+    ].join("\n");
+    return `${WHATSAPP_URL.split("?")[0]}?text=${encodeURIComponent(text)}`;
+  }
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setStatus("sending");
     setErrorMsg("");
+    setFallbackUrl("");
     const form = e.currentTarget;
     const formData = new FormData(form);
     const payload = Object.fromEntries(formData.entries());
@@ -44,6 +60,7 @@ function ContactPage() {
     } catch (err: any) {
       setStatus("error");
       setErrorMsg(err.message || "Network error. Please try WhatsApp.");
+      setFallbackUrl(buildWhatsAppUrl(payload));
     }
   }
 
@@ -112,7 +129,22 @@ function ContactPage() {
                 </div>
 
                 {status === "error" && (
-                  <p className="text-sm text-red-400">{errorMsg}</p>
+                  <div className="rounded-2xl border border-primary/30 bg-primary/5 p-5">
+                    <p className="text-sm text-foreground/90">{errorMsg}</p>
+                    {fallbackUrl && (
+                      <a
+                        href={fallbackUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-4 inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground hover:opacity-90 transition"
+                      >
+                        <MessageCircle className="w-4 h-4" /> Send this brief on WhatsApp
+                      </a>
+                    )}
+                    <p className="mt-3 text-xs text-muted-foreground">
+                      Your message is kept in the form, nothing was lost.
+                    </p>
+                  </div>
                 )}
 
                 <button

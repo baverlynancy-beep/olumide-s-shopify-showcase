@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
 import { useReveal, PageHero } from "@/components/site/Reveal";
 import { projects } from "@/lib/site-data";
 
@@ -49,14 +49,36 @@ function ProjectsPage() {
                   </span>
                 </div>
               </div>
-              <div className="p-7 lg:p-8 flex flex-wrap items-end justify-between gap-4">
-                <div>
-                  <h3 className="font-display font-bold text-2xl lg:text-3xl">{p.name}</h3>
-                  <p className="mt-2 text-muted-foreground">{p.result}</p>
+              <div className="p-7 lg:p-8">
+                <div className="flex flex-wrap items-end justify-between gap-4">
+                  <div>
+                    <h3 className="font-display font-bold text-2xl lg:text-3xl">{p.name}</h3>
+                    <p className="mt-2 text-muted-foreground">{p.result}</p>
+                  </div>
                 </div>
-                <button className="text-sm font-semibold text-primary inline-flex items-center gap-1.5 hover:gap-2.5 transition-all">
-                  View case study <ArrowRight className="w-4 h-4" />
-                </button>
+
+                <div className="mt-7 grid gap-6 md:grid-cols-2">
+                  <div>
+                    <p className="text-[10px] uppercase tracking-[0.25em] text-primary font-semibold">The problem</p>
+                    <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{p.problem}</p>
+                  </div>
+                  <div>
+                    <p className="text-[10px] uppercase tracking-[0.25em] text-primary font-semibold">What I changed</p>
+                    <ul className="mt-2 space-y-1.5">
+                      {p.changes.map((c) => (
+                        <li key={c} className="flex gap-2 text-sm text-muted-foreground leading-relaxed">
+                          <Check className="w-3.5 h-3.5 mt-1 shrink-0 text-primary" />
+                          <span>{c}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="mt-6 rounded-2xl border border-primary/25 bg-primary/5 p-5">
+                  <p className="text-[10px] uppercase tracking-[0.25em] text-primary font-semibold">The result</p>
+                  <p className="mt-2 text-sm text-foreground/90 leading-relaxed">{p.outcome}</p>
+                </div>
               </div>
             </article>
           ))}
