@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
 import { useReveal, PageHero } from "@/components/site/Reveal";
 import { projects } from "@/lib/site-data";
 
