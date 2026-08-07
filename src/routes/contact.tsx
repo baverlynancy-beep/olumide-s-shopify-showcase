@@ -1,8 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { ArrowRight, Mail, MessageCircle, Check, Loader2 } from "lucide-react";
+import { ArrowRight, Mail, MessageCircle, Check, Loader2, Phone } from "lucide-react";
 import { useReveal, PageHero } from "@/components/site/Reveal";
-import { EMAIL, WHATSAPP_DISPLAY, WHATSAPP_URL } from "@/lib/site-data";
+import { EMAIL, WHATSAPP_DISPLAY, WHATSAPP_URL, PHONE_TEL } from "@/lib/site-data";
 
 export const Route = createFileRoute("/contact")({
   component: ContactPage,
@@ -72,7 +72,7 @@ function ContactPage() {
         subtitle="Send a short brief and I'll reply with a free audit plus next steps within 24 hours."
       />
 
-      <section className="pb-32">
+      <section id="book" className="pb-32 scroll-mt-28">
         <div className="mx-auto max-w-6xl px-6 lg:px-10 grid lg:grid-cols-5 gap-10">
           {/* FORM */}
           <div className="reveal lg:col-span-3 rounded-3xl border border-border bg-surface/40 p-8 lg:p-10">
@@ -169,6 +169,7 @@ function ContactPage() {
           <div className="lg:col-span-2 space-y-5">
             <ContactCard icon={Mail} label="Email" value={EMAIL} href={`mailto:${EMAIL}`} />
             <ContactCard icon={MessageCircle} label="WhatsApp" value={WHATSAPP_DISPLAY} href={WHATSAPP_URL} />
+            <ContactCard icon={Phone} label="Call or text" value={WHATSAPP_DISPLAY} href={`tel:${PHONE_TEL}`} />
 
             <div className="reveal rounded-2xl border border-primary/30 bg-primary/5 p-6">
               <p className="text-xs uppercase tracking-widest text-primary font-semibold">Response time</p>

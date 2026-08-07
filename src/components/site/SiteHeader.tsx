@@ -7,7 +7,7 @@ const navLinks = [
   { to: "/", label: "Home" },
   { to: "/sales-proof", label: "Sales Proof" },
   { to: "/projects", label: "Projects" },
-  { to: "/catalog", label: "Catalog" },
+  { to: "/catalog", label: "Services" },
   { to: "/contact", label: "Contact" },
 ] as const;
 
@@ -46,6 +46,7 @@ export default function SiteHeader() {
         </div>
         <Link
           to="/contact"
+          hash="book"
           className="hidden md:inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground hover:opacity-90 transition"
         >
           Free Audit <ArrowRight className="w-4 h-4" />
@@ -61,7 +62,7 @@ export default function SiteHeader() {
               {l.label}
             </Link>
           ))}
-          <Link to="/contact" onClick={() => setOpen(false)} className="rounded-full bg-primary px-5 py-2.5 text-center text-sm font-semibold text-primary-foreground">
+          <Link to="/contact" hash="book" onClick={() => setOpen(false)} className="rounded-full bg-primary px-5 py-2.5 text-center text-sm font-semibold text-primary-foreground">
             Hire Me
           </Link>
         </div>

@@ -1,13 +1,13 @@
 import { Link } from "@tanstack/react-router";
-import { Check, Linkedin, Twitter, MessageCircle } from "lucide-react";
+import { Check, Linkedin, Twitter, MessageCircle, Phone } from "lucide-react";
 import logo from "@/assets/logo.png";
-import { WHATSAPP_DISPLAY, WHATSAPP_URL } from "@/lib/site-data";
+import { WHATSAPP_DISPLAY, WHATSAPP_URL, PHONE_TEL } from "@/lib/site-data";
 
 const navLinks = [
   { to: "/", label: "Home" },
   { to: "/sales-proof", label: "Sales Proof" },
   { to: "/projects", label: "Projects" },
-  { to: "/catalog", label: "Catalog" },
+  { to: "/catalog", label: "Services" },
   { to: "/contact", label: "Contact" },
 ] as const;
 
@@ -41,6 +41,12 @@ export default function SiteFooter() {
             className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-4 py-2 text-sm font-semibold text-primary hover:bg-primary/15 transition mb-4"
           >
             <MessageCircle className="w-4 h-4" /> {WHATSAPP_DISPLAY}
+          </a>
+          <a
+            href={`tel:${PHONE_TEL}`}
+            className="mb-4 flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition w-fit"
+          >
+            <Phone className="w-4 h-4" /> {WHATSAPP_DISPLAY}
           </a>
           <div className="flex gap-3">
             {[Linkedin, Twitter].map((Icon, i) => (

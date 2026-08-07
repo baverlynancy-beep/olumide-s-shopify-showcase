@@ -40,7 +40,7 @@ function HomePage() {
 
         <div className="relative mx-auto max-w-6xl px-6 lg:px-10 grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           <div className="reveal lg:col-span-7">
-            <span className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-xs font-medium text-primary">
+            <span className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3.5 py-1.5 text-[11px] sm:text-xs font-medium text-primary max-w-full">
               <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
               Shopify CRO Specialist. Booking Q3 audits.
             </span>
@@ -54,18 +54,20 @@ function HomePage() {
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
                 to="/contact"
+                hash="book"
                 className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 font-semibold text-primary-foreground hover:opacity-90 transition glow-ring"
               >
                 Get a free store audit <ArrowRight className="w-4 h-4" />
               </Link>
               <Link
-                to="/sales-proof"
+                to="/contact"
+                hash="book"
                 className="inline-flex items-center gap-2 rounded-full border border-border bg-surface/50 px-6 py-3 font-semibold text-foreground hover:border-primary/50 hover:bg-surface transition"
               >
                 See real sales proof
               </Link>
             </div>
-            <div className="mt-10 flex flex-wrap items-center gap-x-7 gap-y-3 text-sm text-muted-foreground">
+            <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 text-[13px] sm:text-sm text-muted-foreground">
               <div className="flex items-center gap-2"><Check className="w-4 h-4 text-primary" />Shopify Specialist</div>
               <div className="flex items-center gap-2"><Check className="w-4 h-4 text-primary" />Audit driven</div>
               <div className="flex items-center gap-2"><Check className="w-4 h-4 text-primary" />Reply in 24h</div>
@@ -133,13 +135,13 @@ function HomePage() {
             <p className="mt-5 text-muted-foreground leading-relaxed max-w-lg">
               The stores I build aren't just pretty. They perform. From new launches to scale ups, clients consistently see breakthrough numbers in their first 90 days.
             </p>
-            <div className="mt-10 grid grid-cols-2 gap-5 max-w-md">
+            <div className="mt-10 grid grid-cols-2 gap-3 sm:gap-5 max-w-md">
               {stats.slice(0, 4).map((s) => (
-                <div key={s.label} className="rounded-2xl border border-border bg-background/40 p-5">
-                  <div className="font-display text-3xl text-gradient">
+                <div key={s.label} className="rounded-2xl border border-border bg-background/40 p-4 sm:p-5 min-w-0">
+                  <div className="font-display text-2xl sm:text-3xl text-gradient break-words">
                     {(s as any).prefix ?? ""}<Counter end={s.value} suffix={s.suffix} />
                   </div>
-                  <p className="mt-1 text-xs text-muted-foreground">{s.label}</p>
+                  <p className="mt-1 text-[11px] sm:text-xs text-muted-foreground leading-snug">{s.label}</p>
                 </div>
               ))}
             </div>
@@ -175,7 +177,7 @@ function HomePage() {
             {services.map((s, i) => (
               <div
                 key={s.title}
-                className="reveal group rounded-2xl border border-border bg-surface/40 p-7 transition-all hover:border-primary/60 hover:bg-surface hover:-translate-y-1"
+                className="reveal group rounded-2xl border border-border bg-surface/40 p-6 sm:p-7 transition-all hover:border-primary/60 hover:bg-surface hover:-translate-y-1"
                 style={{ transitionDelay: `${i * 50}ms` }}
               >
                 <div className="flex items-center justify-between">
@@ -230,6 +232,7 @@ function HomePage() {
               </p>
               <Link
                 to="/contact"
+                hash="book"
                 className="mt-8 inline-flex items-center gap-3 rounded-full bg-primary px-7 py-3.5 text-base font-bold text-primary-foreground hover:opacity-90 transition glow-ring"
               >
                 Book your free call <ArrowRight className="w-5 h-5" />

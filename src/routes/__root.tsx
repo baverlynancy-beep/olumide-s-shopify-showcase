@@ -105,11 +105,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           url: "https://olumide-glow-folio.lovable.app",
           image: "https://olumide-glow-folio.lovable.app/favicon.png",
           email: "olumidesamsonlb1@gmail.com",
-          telephone: "+2348149587760",
+          telephone: "+2349126011717",
           priceRange: "$150 - $1500+",
           areaServed: "Worldwide",
           founder: { "@type": "Person", name: "Olumide A.", jobTitle: "Shopify CRO & Growth Specialist" },
-          sameAs: ["https://wa.me/2348149587760"],
+          sameAs: ["https://wa.me/2349126011717"],
           hasOfferCatalog: {
             "@type": "OfferCatalog",
             name: "Shopify Growth Services",

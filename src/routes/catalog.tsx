@@ -8,9 +8,9 @@ export const Route = createFileRoute("/catalog")({
   component: CatalogPage,
   head: () => ({
     meta: [
-      { title: "Packages & Pricing — Shopify Services | Olumide Digital Solution" },
+      { title: "Services and Pricing. Shopify Growth Packages | Olumide" },
       { name: "description", content: "Transparent Shopify packages — from starter launches to full premium DTC builds with CRO and ongoing support." },
-      { property: "og:title", content: "Packages & Pricing — Shopify Services" },
+      { property: "og:title", content: "Services and Pricing. Shopify Growth Packages" },
       { property: "og:description", content: "Transparent Shopify packages from $300 to $1,500+." },
     ],
   }),
@@ -21,7 +21,7 @@ function CatalogPage() {
   return (
     <div>
       <PageHero
-        eyebrow="Catalog and Pricing"
+        eyebrow="Services and Pricing"
         title={<>Pick the package that <span className="text-gradient">fits your stage.</span></>}
         subtitle="Transparent pricing. No surprises. Everything you need to launch and scale on Shopify."
       />
