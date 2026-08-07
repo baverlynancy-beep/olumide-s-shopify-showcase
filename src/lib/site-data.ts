@@ -13,8 +13,9 @@ export const EMAIL = "olumidesamsonlb1@gmail.com";
 // First submission triggers a one-time activation email to EMAIL.
 export const FORM_ENDPOINT = `https://formsubmit.co/ajax/${EMAIL}`;
 
-export const WHATSAPP_NUMBER = "2348149587760";
-export const WHATSAPP_DISPLAY = "+234 814 958 7760";
+export const WHATSAPP_NUMBER = "2349126011717";
+export const WHATSAPP_DISPLAY = "+234 912 601 1717";
+export const PHONE_TEL = "+2349126011717";
 export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=Hi%20Olumide%2C%20I%20saw%20your%20portfolio%20and%20I%27d%20like%20a%20store%20audit.`;
 
 export const proofImages = [
